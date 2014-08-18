@@ -1,0 +1,21 @@
+{
+  "name": "analysis",
+  "version": "0.0.0",
+  "description": "",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^2.1.4",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "napa": "^0.4.1"
+  },
+  "scripts": {
+    "install": "napa",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "napa": {
+    "angular": "angular/bower-angular",
+    "angular-ui-router": "angular-ui/ui-router"
+  }
+}

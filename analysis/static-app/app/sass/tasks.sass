@@ -1,0 +1,52 @@
+@import "variables"
+
+.tasks
+
+  .task
+    padding: 26px 36px
+
+    &:nth-child(odd)
+      background-color: $light-bg
+
+    .task-body
+      width: 69.8%
+      float: left
+
+      .description
+        font-size: 20px
+
+      .created
+        color: $light-text-color
+        font-size: 16px
+
+    .task-detail-col
+      float: right
+      width: 15%
+
+    .take, .severity
+      margin-right: 10px
+      float: right
+      font-size: 20px
+      text-transform: uppercase
+
+    .take
+      color: #fff
+      background-color: $brand-accent
+      border-radius: 10px
+      padding: 10px 16px
+      cursor: pointer
+
+      &:hover
+        background-color: lighten($brand-accent, 10%)
+
+    .severity
+      line-height: 42px
+      
+      &.low
+        color: $grade-5
+
+      &.medium
+        color: $grade-3
+
+      &.high
+        color: $grade-0

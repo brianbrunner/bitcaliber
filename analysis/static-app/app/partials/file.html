@@ -1,0 +1,30 @@
+<div class='page-content'>
+
+  <div class='title'>{{ filename }}</div>
+
+  <div class='code-view'>
+
+    <table ng-if='!loading'>
+      <thead>
+        <tr>
+          <th class='line-no'></th>
+          <th class='body'></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='line in lines track by $index' ng-class='{ warn: line.messages.length }'>
+          <td>{{ $index+1 }}</td>
+          <td>
+            <pre>{{ line.text }}</pre>
+            <pre class='message' ng-repeat='message in line.messages'>{{ message.message }}</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class='clearfix'>
+
+  </div>
+
+</div>

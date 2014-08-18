@@ -1,0 +1,446 @@
+@import "bourbon/bourbon"
+
+@import "variables"
+
+.fa-heart
+  color: $brand-accent
+*
+  color: #30383c
+  margin: 0
+  padding: 0
+
+a
+  color: $brand-primary
+  transition: 0.25s
+  cursor: pointer
+  text-decoration: none
+
+  *
+    color: $brand-primary
+
+  &:hover
+    color: lighten($brand-primary, 15%)
+
+    *
+      color: lighten($brand-primary, 15%)
+
+body, html
+  background-color: #e9e9fc
+  height: 100%
+
+.wrapper
+  position: relative
+  min-height: 100%
+
+ul
+  list-style: none
+
+.clearfix
+  clear: both
+
+.nav-wrap
+  background-color: $brand-primary
+
+.logo
+  text-decoration: none
+  color: #f0f0ff
+
+  &:hover
+    color: #f0f0ff
+
+.navbar
+  width: 1200px
+  margin: auto auto
+  
+  .logo
+    position: relative
+    display: inline-block
+    font-size: 22px
+    line-height: 34px
+    padding-left: 22px
+    color: #fff
+
+    i
+      color: #fff
+      position: absolute
+      font-size: 18px
+      left: 4px
+      top: 8px 
+
+  ul
+    float: right
+    font-size: 18px
+    
+    li
+      float: left
+      display: inline-block
+
+      a
+        display: inline-block
+        color: #fff
+        padding: 0 8px
+        line-height: 34px
+
+        &:hover
+          background-color: darken($brand-primary, 10%)
+
+.content
+  width: 1200px
+  margin: 40px auto 0px
+  padding-bottom: 160px
+
+.page-nav
+  background-color: #fff
+  border-bottom: 4px solid #ccccdd
+  margin-bottom: 24px
+
+  .title
+    display: inline-block
+    position: relative
+    line-height: 56px
+    padding: 0 12px
+    font-size: 28px
+    max-width: 400px
+    font-weight: bold
+
+    &:after
+      content: ""
+      background-color: $brand-accent
+      height: 4px
+      width: 100%
+      position: absolute
+      bottom: -4px
+      right: 0
+
+  ul
+    float: right
+    margin-right: 16px
+
+    li
+      display: inline-block
+      float: left
+
+      a
+        display: inline-block
+        line-height: 56px
+        height: 56px
+        font-size: 18px
+        padding: 0 16px
+        position: relative
+
+        &:after
+          content: ""
+          height: 4px
+          width: 100%
+          position: absolute
+          bottom: -4px
+          left: 0
+          transition: 0.25s
+
+        &:hover
+          background-color: $brand-accent
+          color: #fff
+
+          &:after
+            background-color: darken($brand-accent, 20%)
+
+.page-content
+  margin-bottom: 24px
+  background-color: #fff
+
+  .title
+    margin-bottom: 10px
+    line-height: 46px
+    padding-left: 14px
+    font-size: 20px
+    color: $light-text-color
+    border-left: 6px solid $light-text-color
+
+.feed
+
+  .feed-item
+    min-height: 60px
+
+    &:nth-child(odd)
+      background-color: #f9f9f9
+
+    .feed-icon
+      float: left
+      display: inline-block
+      width: 80px
+      padding: 15px
+
+      .icon-circle
+        float: left
+        box-sizing: border-box
+        display: inline-block
+        border-radius: 10px
+        border-width: 3px 
+        border-style: solid
+        width: 50px
+        height: 50px
+        margin-left: 15px
+        position: relative
+
+        .icon-text
+          position: absolute
+          line-height: 44px
+          font-size: 20px
+          font-weight: bold
+          width: 100%
+          text-align: center
+
+      .icon-semi-left
+        position: relative
+        display: inline-block
+        box-sizing: border-box
+        width: 25px
+        height: 50px
+        border-radius: 10px 0 0 10px
+        border-width: 3px 0 3px 3px
+        border-style: solid
+        float: left
+
+        .icon-text
+          left: 6px
+          position: absolute
+          line-height: 44px
+          font-size: 20px
+          font-weight: bold
+          width: 100%
+          text-align: center
+
+      .icon-semi-transition
+        display: inline-block
+        box-sizing: border-box
+        height: 50px
+        width: 30px
+        border-width: 3px 0
+        border-style: solid
+        float: left
+
+        @for $i from 1 through 6
+          @for $j from 1 through 6
+            @if $i != $j
+              $i_real: $i - 1
+              $j_real: $j - 1
+              &.from-#{$i_real}-to-#{$j_real}
+                @include border-image(linear-gradient(to right, nth($grades, $i), nth($grades, $j)) 1 stretch)
+
+      .icon-semi-right
+        position: relative
+        float: left
+        display: inline-block
+        box-sizing: border-box
+        width: 25px
+        height: 50px
+        border-radius: 0 10px 10px 0
+        border-width: 3px 3px 3px 0
+        border-style: solid
+
+        .icon-text
+          right: 6px
+          position: absolute
+          line-height: 44px
+          font-size: 20px
+          font-weight: bold
+          width: 100%
+          text-align: center
+
+    .feed-content
+      float: left
+      vertical-align: text-top
+      padding: 26px 20px 24px 6px
+      font-size: 18px
+
+@for $i from 1 through 6
+  $i_real: $i - 1
+  .grade-#{$i_real}
+    color: nth($grades, $i)
+    border-color: nth($grades, $i)
+
+    .icon-text
+      color: nth($grades, $i)
+
+.code-view
+
+  table
+    border-spacing: 0
+
+    thead
+      
+      th.line-no
+        width: 100px
+
+      th.body
+        width: 1100px
+
+    tbody
+
+      tr
+
+        &:nth-child(odd)
+          background: #f9f9f9
+
+        &.warn
+          background-color: #eeddbb
+
+          &:nth-child(odd)
+            background-color: darken(#eeddbb, 5%)
+
+          td:first-child
+            background-color: darken(#eeddbb, 15%)
+
+        &.error
+          background-color: #eebbbb
+
+          &:nth-child(odd)
+            background-color: darken(#eebbbb, 5%)
+
+          td:first-child
+            background-color: darken(#eebbbb, 15%)
+
+        &.style
+          background-color: lighten($brand-primary, 23%)
+
+          &:nth-child(odd)
+            background-color: lighten($brand-primary, 18%)
+
+          td:first-child
+            background-color: lighten($brand-primary, 8%)
+
+        td:first-child
+          vertical-align: top
+          font-size: 16px
+          font-family: "source-code-pro", monospace
+          padding: 3px 16px 3px 0px
+          text-align: right
+          background-color: #bbb
+          color: #fff
+
+        td pre
+          font-family: "source-code-pro", monospace
+          padding: 3px 16px
+
+          &.message
+            color: $light-text-color
+
+          *
+            font-family: "source-code-pro", monospace
+
+.repo-list
+
+  .repo-item
+    min-height: 65px
+    padding: 20px
+
+    &:nth-child(odd)
+      background-color: #f9f9f9
+
+    .repo-title
+      float: left
+
+      .major
+        font-size: 28px
+
+      .minor
+        color: $light-text-color
+        font-size: 18px
+
+    .score
+      padding-top: 8px
+      float: right
+      margin-right: 40px
+      font-size: 40px
+
+      .detail
+        font-size: 26px
+        color: $light-text-color
+
+    .repo-hero
+      float: right
+
+      img
+        width: 65px
+        height: 65px
+        border-radius: 50%
+
+.footer
+  width: 100%
+  position: absolute
+  bottom: 0
+  left: 0
+  border-top: 6px solid #88a
+  margin-top: 140px
+  background-color: #aac
+  padding: 40px 0
+
+.repo-stats-section
+  padding-bottom: 16px
+  float: left
+  display: inline-block
+  width: 24.7%
+  
+  .stats-title
+    color: $light-text-color
+    font-weight: bold
+    padding: 10px 20px
+    text-transform: uppercase
+
+  .stats-score
+    font-size: 50px
+    text-align: right
+    padding-right: 16px
+
+    .detail
+      font-size: 24px
+      color: $light-text-color
+
+  .stats-mvp
+    padding-right: 10px
+
+    .name
+      float: right
+      font-size: 36px
+      line-height: 60px
+      margin-right: 10px
+    
+    img
+      border-radius: 50%
+      float: right
+      height: 50px
+      width: 50px
+
+  .stats-branch, .stats-code
+    padding-right: 10px
+    padding-bottom: 6px
+    float: right
+    font-size: 22px
+
+    a
+      margin-right: 6px
+
+    .score
+      display: inline-block
+      text-align: right
+      width: 50px
+
+      .detail
+        font-size: 16px
+        color: $light-text-color
+
+.article
+  padding: 10px 20px 20px
+
+  .article-title
+    font-size: 16px
+    font-weight: bold
+
+  .article-detail
+    color: $light-text-color
+    font-size: 14px
+    display: inline-block
+
+  .article-body
+    padding-top: 10px
+    font-size: 14px

@@ -1,0 +1,36 @@
+digraph "packages_No_Name" {
+charset="utf-8"
+rankdir=BT
+"0" [label="analysis", shape="box"];
+"1" [label="analysis.admin", shape="box"];
+"2" [label="analysis.analyzer", shape="box"];
+"3" [label="analysis.analyzer.analyzer", shape="box"];
+"4" [label="analysis.analyzer.dictreporter", shape="box"];
+"5" [label="analysis.migrations", shape="box"];
+"6" [label="analysis.migrations.0001_initial", shape="box"];
+"7" [label="analysis.migrations.0002_auto__add_field_commit_parent", shape="box"];
+"8" [label="analysis.migrations.0003_auto", shape="box"];
+"9" [label="analysis.migrations.0004_auto__add_field_fileanalysis_filename", shape="box"];
+"10" [label="analysis.migrations.0005_auto__add_field_pylintanalysis_message__add_field_pylintanalysis_msg_i", shape="box"];
+"11" [label="analysis.migrations.0006_auto__del_functionanalysis__del_classanalysis__add_complexityanalysis_", shape="box"];
+"12" [label="analysis.migrations.0007_auto__del_complexityanalysis__add_pyfunctioncomplexityanalysis__add_py", shape="box"];
+"13" [label="analysis.migrations.0008_auto__add_field_pyfunctioncomplexityanalysis_name__add_field_pyfunctio", shape="box"];
+"14" [label="analysis.migrations.0009_auto__add_field_commit_commit_hash_short", shape="box"];
+"15" [label="analysis.migrations.0010_auto__add_githubuser", shape="box"];
+"16" [label="analysis.migrations.0011_auto__add_author__add_field_commit_author", shape="box"];
+"17" [label="analysis.migrations.0012_auto__add_unique_author_email", shape="box"];
+"18" [label="analysis.migrations.0013_auto", shape="box"];
+"19" [label="analysis.models", shape="box"];
+"20" [label="analysis.tasks", shape="box"];
+"21" [label="analysis.tests", shape="box"];
+"22" [label="analysis.views", shape="box"];
+"1" -> "19" [arrowhead="open", arrowtail="none"];
+"1" -> "20" [arrowhead="open", arrowtail="none"];
+"2" -> "3" [arrowhead="open", arrowtail="none"];
+"3" -> "4" [arrowhead="open", arrowtail="none"];
+"3" -> "19" [arrowhead="open", arrowtail="none"];
+"19" -> "2" [arrowhead="open", arrowtail="none"];
+"22" -> "2" [arrowhead="open", arrowtail="none"];
+"22" -> "19" [arrowhead="open", arrowtail="none"];
+"22" -> "20" [arrowhead="open", arrowtail="none"];
+}

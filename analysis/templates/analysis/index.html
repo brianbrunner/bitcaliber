@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html ng-app='analysis'>
+<head>
+
+  <title>Bit Caliber</title>
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <script type="text/javascript" src="//use.typekit.net/qix3tgv.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+
+  <link rel='stylesheet' href='/static/analysis/css/style.css'>
+  <script src='/static/analysis/js/app.js'></script>
+
+</head>
+<body>
+
+  <div class='wrapper'>
+
+    <div class='nav-wrap'>
+
+      <div class='navbar'>
+        <a class='logo' href='/'><i class='fa fa-circle-o'></i> BIT CALIBER</a>
+        <ul>
+          <li><a href='{% url "socialauth_begin" "github" %}' class='fa fa-github'></a></li>
+          <li><a class='fa fa-cogs'></a></li>
+          <li><a class='fa fa-sign-out'></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class='content'>
+
+      <div ui-view></div>
+
+    </div>
+
+    <div class='footer'>
+    </div>
+
+  </div>
+
+</body>
+</html>
